@@ -10,6 +10,10 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(iss_interfaces REQUIRED)
 
+add_executable(iss_sub src/iss_sub.cpp)
+
+ament_target_dependencies(iss_sub rclcpp iss_interfaces)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -22,4 +26,6 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+install(TARGETS iss_sub
+DESTINATION lib/${PROJECT_NAME})
 ament_package()

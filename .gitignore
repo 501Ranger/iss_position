@@ -1,4 +1,7 @@
 build/
 install/
 log/
-.vscode/browse.vc.db
+*.db
+*.db-shm
+*.db-wal
+.vscode/
